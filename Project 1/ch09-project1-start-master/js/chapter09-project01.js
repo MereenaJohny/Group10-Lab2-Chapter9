@@ -14,5 +14,16 @@ window.addEventListener("load", function () {
             item.classList.remove('highlight');
             item.classList.add('hilightable_error');
         });
+        var form = document.getElementById('mainform');
+        mainform.addEventListener('submit', Event => {
+            document.querySelectorAll('.required').forEach(item => {
+                if (itm.value == "") {
+                    item.classList.add('error');
+                    event.preventDefault();
+                }
+
+            }
+            )
+        })
     })
 })
