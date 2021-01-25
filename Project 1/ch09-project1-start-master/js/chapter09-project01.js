@@ -1,29 +1,31 @@
 
 /* add code here  */
 window.addEventListener("load", function () {
-    document.querySelectorAll('.hilightable').forEach(item => {
-
-        var hilightable_error = document.querySelector('.hilightable');
-
-        item.addEventListener('focus', event => {
-            item.classList.remove('hilightable_error');
-            item.classList.add('highlight');
-        });
-
-        item.addEventListener('blur', event => {
-            item.classList.remove('highlight');
-            item.classList.add('hilightable_error');
-        });
-        var form = document.getElementById('mainform');
-        mainform.addEventListener('submit', Event => {
-            document.querySelectorAll('.required').forEach(item => {
-                if (itm.value == "") {
-                    item.classList.add('error');
-                    event.preventDefault();
-                }
-
-            }
-            )
-        })
-    })
+    var highlightElement = document.querySelectorAll('.hilightable');
+    for (i = 0; highlightElement.length; i++) {
+        highlightElement[i].addEventListener("focus", checking);
+        highlightElement[i].addEventListener("blur", checking);
+    }
 })
+function checking(e) {
+    if (e.type == "focus") {
+        e.target.classlist.add("highlight");
+    }
+    else if (e.type == "blur") {
+        e.target.classlist.remove("hilightable");
+    }
+}
+
+var form = document.getElementById('mainform');
+mainform.addEventListener('submit', Event => {
+document.querySelectorAll('.required').forEach(item => {
+if (item.value == "") {
+item.classList.add('error');
+ event.preventDefault();
+}
+else {
+    item.classlist.remove("error");
+}
+});
+});
+    
