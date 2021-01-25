@@ -3,7 +3,7 @@
 window.addEventListener("load", function () {
     document.querySelectorAll('.hilightable').forEach(item => {
 
-        var hilightable = document.querySelector('.hilightable');
+        var hilightable_error = document.querySelector('.hilightable');
 
         item.addEventListener('focus', event => {
             item.classList.remove('hilightable_error');
