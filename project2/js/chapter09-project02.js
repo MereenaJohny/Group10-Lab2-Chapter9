@@ -21,6 +21,7 @@ var mousein = document.querySelector('#featured img');
 mousein.addEventListener("mouseover", function(event){
     var figuretitle = document.querySelector("#featured  figcaption");
     figuretitle.style.opacity = "75%";
+    figuretitle.style.transition = 'opacity 1s';//adding animation
 })
 
 var mouseout = document.querySelector('#featured img');
