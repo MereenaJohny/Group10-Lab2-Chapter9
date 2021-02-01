@@ -1,5 +1,6 @@
 /* add code here */
 window.addEventListener('load', function () {// creating event handler after loading window
+        //changing image size on clicking and showing their figure caprtion.
     var imageClick = document.querySelectorAll('#thumbnails img');
     var i = 0;
     while (i < imageClick.length) {
