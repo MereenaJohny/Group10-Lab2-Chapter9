@@ -1,31 +1,36 @@
-
-/* add code here  */
-window.addEventListener("load", function () {
-    var highlightElement = document.querySelectorAll('.hilightable');
-    for (i = 0; highlightElement.length; i++) {
-        highlightElement[i].addEventListener("focus", checking);
-        highlightElement[i].addEventListener("blur", checking);
-    }
-})
-function checking(e) {
-    if (e.type == "focus") {
-        e.target.classlist.add("highlight");
-    }
-    else if (e.type == "blur") {
-        e.target.classlist.remove("hilightable");
-    }
-}
-
-var mainform = document.getElementById('mainform');
-mainform.addEventListener('submit', Event => {
-document.querySelectorAll('.required').forEach(item => {
-if (item.value == "") {
-item.classList.add('error');
- event.preventDefault();
-}
-else {
-    item.classlist.remove("error");
-}
-});
-});
+window.addEventListener('load', function(){
     
+    var hililightelement = document.querySelectorAll(".hilightable");
+    for(i=0; i < hililightelement.length; i++) {
+      var toggle = (event) => { event.target.classList.toggle('highlight') }
+      hililightelement[i].addEventListener('focus', toggle)
+      hililightelement[i].addEventListener('blur', toggle)
+    }
+  
+     
+    var form=document.getElementById("mainForm");
+    form.addEventListener("submit", check);
+    function check(event){
+      var requiredelements = document.querySelectorAll(".required");
+      for(i=0; i < requiredelements.length; i++){
+        if(requiredelements[i].value == "")
+        {
+            event.preventDefault();
+            requiredelements[i].classList.add("error");
+        }
+        else {
+          requiredelements[i].classList.remove("error");
+        }
+  
+      }
+    }
+    form.addEventListener("reset", resetForm)
+  
+    function resetForm(event){
+      var requiredelements = document.querySelectorAll(".required");
+      for(i=0; i < requiredelements.length; i++){
+        requiredelements[i].classList.remove("error");
+      }
+    }
+  
+  })
