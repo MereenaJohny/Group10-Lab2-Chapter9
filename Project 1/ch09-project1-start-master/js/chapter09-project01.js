@@ -16,7 +16,7 @@ function checking(e) {
     }
 }
 
-var form = document.getElementById('mainform');
+var mainform = document.getElementById('mainform');
 mainform.addEventListener('submit', Event => {
 document.querySelectorAll('.required').forEach(item => {
 if (item.value == "") {
