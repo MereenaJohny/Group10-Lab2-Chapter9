@@ -12,6 +12,7 @@ window.addEventListener('load', function () {// creating event handler after loa
             var figuretitle = document.querySelector("#featured > figcaption")
             figuretitle.style.opacity = "0%";
             figuretitle.innerHTML = event.target.title;
+            
         })
         i++;
     }
@@ -21,11 +22,12 @@ var mousein = document.querySelector('#featured img');
 mousein.addEventListener("mouseover", function(event){
     var figuretitle = document.querySelector("#featured  figcaption");
     figuretitle.style.opacity = "75%";
-    figuretitle.style.transition = 'opacity 1s';//adding animation
+    figuretitle.style.transition= 'opacity 1s';//adding animation
+    
 })
 
 var mouseout = document.querySelector('#featured img');
-mousein.addEventListener("mouseout", function(event){
+mouseout.addEventListener("mouseout", function(event){
     var figuretitle = document.querySelector("#featured  figcaption");
     figuretitle.style.opacity = "0%";
 })
